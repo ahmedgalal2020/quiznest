@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useState, useEffect } from "react";
+import { Toaster } from 'react-hot-toast';
 
 export const QuizContext = createContext();
 
@@ -34,6 +35,8 @@ export default function QuizProvider({ children }) {
 
   return (
     <QuizContext.Provider value={{ users, folders, loading, setFolders }}>
+      <Toaster position="top-center" />
+
       {children}
     </QuizContext.Provider>
   );
